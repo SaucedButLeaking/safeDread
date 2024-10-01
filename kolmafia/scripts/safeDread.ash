@@ -1,6 +1,9 @@
-void main(){
-	boolean isScriptEnabled = get_property("preAdventureScript") == "scripts/safeDreadPreAdventure.ash";
+void main(string... args){
 
-	set_property("preAdventureScript", isScriptEnabled ? "" : "scripts/safeDreadPreAdventure.ash");
+	boolean isScriptEnabled = get_property("betweenBattleScript") == "scripts/safeDreadPreAdventure.ash";
+
+	if(count(args) > 0) { set_property("_safeDreadMinCount", args[0]); }
+
+	set_property("betweenBattleScript", isScriptEnabled ? "" : "scripts/safeDreadPreAdventure.ash");
 	print(isScriptEnabled ? "Pre-Adventure Script Disabled." : "Pre-Adventure Script Enabled!", "teal");
 }

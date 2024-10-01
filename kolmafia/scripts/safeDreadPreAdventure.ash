@@ -48,7 +48,10 @@ void safeToContinue(string zone) {
 		// Take previous turn data
 
 		if(temp[0] != raidlogs && temp[0] != ""){
-			abort("Someone else is adventuring at the same time as you!");
+			clear(temp);
+			map_to_file(temp, "safeDreadData.txt");
+
+			abort("Someone else is adventuring at the same time as you!"); // Clear data to prevent softlocks
 		}
 		// Compare previous turn data with current turn data. If there's any change, it's not from your username and therefore someone else. Unless it's your first adv, then skip
 
@@ -70,7 +73,7 @@ void main() {
 	
 	string zone = substring(my_location(), my_location().index_of(" ") + 1);
 
-
+	// TODO add a time-based clear system 
 	
 	string[int] temp;
 	file_to_map("safeDreadData.txt", temp);

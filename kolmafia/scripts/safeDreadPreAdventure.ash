@@ -1,4 +1,4 @@
-/ Globals
+// Globals
 
 // number of monsters to leave alive in a zone
 

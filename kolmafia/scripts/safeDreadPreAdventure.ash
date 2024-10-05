@@ -33,8 +33,7 @@ void safeToContinue(string zone) {
 		// logic to make sure we're not adventuring at the same time as anyone else
 
 		int startIndex = raidLogs.index_of(`The {zone}`);
-		string[string] endIndexText = {"Village":"The Woods", "Woods":"The Castle", "Castle":"Miscellaneous"};
-		int endIndex = raidLogs.index_of(endIndexText[zone]);
+		int endIndex = raidLogs.index_of("</blockquote>", startIndex);
 		// Find the start and the end of the raidlogs zone portions
 
 
